@@ -6,7 +6,7 @@ class MainPage extends Page {
     }
 
     open() {
-        return super.open("");
+        return super.open("ca");
     }
 
     async open_quizzes_tab () {

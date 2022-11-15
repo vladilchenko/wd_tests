@@ -10,7 +10,7 @@ class QuizzePage extends Page {
 
     }
     open() {
-        return super.open('/quizzes');
+        return super.open('ca/quizzes');
     }
 
     async check_marvel_cat () {
