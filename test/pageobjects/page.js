@@ -10,4 +10,8 @@ module.exports = class Page {
     open (path) {
         return browser.url(`https://www.buzzfeed.com/${path}`)
     }
+
+    openShop (path) {
+        return browser.url(`https://shop.buzzfeed.com/${path}`)
+    }
 }
