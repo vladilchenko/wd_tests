@@ -24,8 +24,6 @@ class ProductPage extends Page {
 
     get removeFirstItem () {
         return this.cartContainer.$('button[class*="ajaxcart__qty-remove"]')
-        //return this.cartContainer.$('//button[contains(@class,"ajaxcart__qty-remove")]');
-
     }
 
     get emptyCard () {
@@ -43,9 +41,9 @@ class ProductPage extends Page {
         await expect(this.emptyCard).toHaveText('Your cart is currently empty.');
     }
 
-//     async RemoveItamFromCart () {
-//         await this.removeFirstItem.isClickable();
-//         await this.removeFirstItem.click();
-//     }
-// }
+    async RemoveItamFromCart () {
+        await browser.pause(3000);
+        await this.removeFirstItem.click();
+    }
+}
 module.exports = new ProductPage();

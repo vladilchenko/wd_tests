@@ -5,19 +5,19 @@ const ShopSearchPage = require('../pageobjects/shopping_search_page');
 const ProductPage = require('../pageobjects/product_page');
 
 describe('Shopping page', () => {
-    // it('should open shopping page', async () => {
-    //     LoginPage.open( );
-    //     await LoginPage.login('kirnybob@gmail.com', 'BuzzFeed123!');
-    //     await DashboardPage.openShop();
+    it('should open shopping page', async () => {
+        LoginPage.open( );
+        await LoginPage.login('kirnybob@gmail.com', 'BuzzFeed123!');
+        await DashboardPage.openShop();
   
-    // });
+    });
 
-    // it('serch item via search icon in top menu', async () => {
-    //     ShoppingPage.openShop();
-    //     await ShoppingPage.SerchInRightTabBar('bag');
-    //     await expect(ShoppingPage.searchResult).toBeExisting();
+    it('serch item via search icon in top menu', async () => {
+        ShoppingPage.openShop();
+        await ShoppingPage.SerchInRightTabBar('bag');
+        await expect(ShoppingPage.searchResult).toBeExisting();
         
-    // });
+    });
 
     it('serch item via search page', async () => {
         ShopSearchPage.openShop();
@@ -36,7 +36,7 @@ describe('Shopping page', () => {
     });
 
    it('remove item from the cart', async () => {
-      await ProductPage.RemoveItamFromCart()
-      //await ProductPage.CheckCartIsEmpty()
+      await ProductPage.RemoveItamFromCart();
+      await ProductPage.CheckCartIsEmpty();
     });
 });

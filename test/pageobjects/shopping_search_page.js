@@ -34,10 +34,12 @@ class ShopSearchPage extends Page {
     async SerchRequest (product_name) {
         await this.searchInputField.setValue(product_name);
         await browser.keys(['Enter'])
+        await browser.pause(2000);
     }
 
     async OpenFirstItam () {
         await this.firstItaminTheList.click();
+        await browser.pause(2000);
     }
 
 }
