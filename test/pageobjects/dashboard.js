@@ -1,6 +1,18 @@
 const Page = require('./page');
 
 class DashboardPage extends Page {
+    get mainMenu () {
+        return $('button[aria-label="open menu to see more links"]');
+    }
+
+    get dropDownMainMenu () {
+        return $('#js-more-nav');
+    }
+
+    get merchMenu() {
+        return this.dropDownMainMenu.$('//li[contains(.,"Merch")]')
+    }
+
     get username () {
         return $('#buzz-content');
     }
@@ -40,6 +52,12 @@ class DashboardPage extends Page {
         await expect(this.menuMyDraft).toBeExisting();
         await expect(this.menuDashboard).toBeExisting();
         await expect(this.menulogOut).toBeExisting();
+    }
+
+    async openShop () {
+        await this.mainMenu.click();
+        await expect(this.merchMenu).toBeExisting();
+        await this.merchMenu.click();
     }
 
 
